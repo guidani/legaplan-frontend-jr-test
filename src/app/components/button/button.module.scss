@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin button-default-style {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+  font-weight: 500;
+}
+
+.btn_primary {
+  @include button-reset;
+  @include button-default-style;
+  background: linear-gradient(to right, $color_dark_blue, $color_light_blue);
+  color: #fff;
+}
+.btn_danger {
+  @include button-reset;
+  @include button-default-style;
+  background: linear-gradient(to right, $color_dark_red, $color_light_red);
+  color: #fff;
+}
+.btn_neutral {
+  @include button-reset;
+  @include button-default-style;
+  background: #e7eefb;
+  color: #000;
+}

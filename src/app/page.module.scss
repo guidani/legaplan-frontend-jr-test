@@ -1,10 +1,12 @@
-$layout-breakpoint-large: 1024px;
-$color_gray: #0000008a;
-$color_gray_secondary: #b0bbd1;
-$color_dark_blue: #0796d3;
-$color_light_blue: #53c0f0;
-$color_dark_red: #d30707;
-$color_light_red: #f05353;
+// $layout-breakpoint-large: 1024px;
+// $color_gray: #0000008a;
+// $color_gray_secondary: #b0bbd1;
+// $color_dark_blue: #0796d3;
+// $color_light_blue: #53c0f0;
+// $color_dark_red: #d30707;
+// $color_light_red: #f05353;
+
+@import "./styles/variables.scss";
 
 @mixin button-reset {
   padding: 0;

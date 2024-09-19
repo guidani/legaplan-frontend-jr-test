@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
+import Button, { ButtonStyle } from "./components/button/Button";
 import Modal from "./components/modal/Modal";
 import styles from "./page.module.scss";
 
@@ -100,7 +101,7 @@ export default function Home() {
         </div>
       </main>
       <footer className={styles.footer}>
-        <button className={styles.btn_primary} onClick={toggleModal}>Adicionar nova tarefa</button>
+        <Button text="Adicionar nova tarefa" buttonStyle={ButtonStyle.primary} handler={toggleModal} />
       </footer>
       <Modal show={isModalOpen} handleClose={toggleModal} />
     </div>
