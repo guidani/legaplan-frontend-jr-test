@@ -3,13 +3,18 @@ import Image from "next/image";
 import { useState } from "react";
 import Button, { ButtonStyle } from "./components/button/Button";
 import Modal from "./components/modal/Modal";
+import ModalDeletarTarefa from "./components/modal_deletar_tarefa/ModalDeletarTarefa";
 import styles from "./page.module.scss";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalDelOpen, setIsModalDelOpen] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+  const toggleModalDeletarTarefa = () => {
+    setIsModalDelOpen(!isModalDelOpen);
   };
   return (
     <div className={styles.page}>
@@ -102,11 +107,11 @@ export default function Home() {
       </main>
       <footer className={styles.footer}>
         <div className={styles.add_btn}>
-
-        <Button text="Adicionar nova tarefa" buttonStyle={ButtonStyle.primary} handler={toggleModal} />
+          <Button text="Adicionar nova tarefa" buttonStyle={ButtonStyle.primary} handler={toggleModal} />
         </div>
       </footer>
       <Modal show={isModalOpen} handleClose={toggleModal} />
+      <ModalDeletarTarefa show={isModalDelOpen} handleClose={toggleModalDeletarTarefa} />
     </div>
   );
 }
