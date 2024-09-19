@@ -20,7 +20,6 @@ $color_light_red: #f05353;
   border-radius: 0.5rem;
   padding: 1rem 0.5rem;
   font-weight: 500;
-  color: #fff;
 }
 
 .page {
@@ -126,29 +125,20 @@ $color_light_red: #f05353;
 
 .btn_primary {
   @include button-reset;
+  @include button-default-style;
   background: linear-gradient(to right, $color_dark_blue, $color_light_blue);
-  width: 100%;
-  border-radius: 0.5rem;
-  padding: 1rem 0.5rem;
-  font-weight: 500;
   color: #fff;
 }
 .btn_danger {
   @include button-reset;
+  @include button-default-style;
   background: linear-gradient(to right, $color_dark_red, $color_light_red);
-  width: 100%;
-  border-radius: 0.5rem;
-  padding: 1rem 0.5rem;
-  font-weight: 500;
   color: #fff;
 }
 .btn_neutral {
   @include button-reset;
+  @include button-default-style;
   background: #e7eefb;
-  width: 100%;
-  border-radius: 0.5rem;
-  padding: 1rem 0.5rem;
-  font-weight: 500;
   color: #000;
 }
 
