@@ -17,9 +17,81 @@ export default function Home() {
         </div>
       </header>
       <main className={styles.main}>
-        <h1>Olá</h1>
+        <div className={styles.lists}>
+          <div className={styles.list_title}>
+            <span>
+              Suas tarefas de hoje
+            </span>
+          </div>
+          <div className={styles.list}>
+            <div className={styles.list_items}>
+              <ul>
+                <li className={styles.list_item}>
+                  <div className={styles.leading}>
+                    <input type="checkbox" name="chk" className={styles.checkbox} />
+                  </div>
+                  <div className={styles.support_text}>
+                    <span className={styles.list_item_text}>Lavar as mãos</span>
+                  </div>
+                  <div className={styles.trailing_icon}>
+                    <Image src={"/trash.svg"} alt="trash" width={34} height={34} />
+                  </div>
+                </li>
+                <li className={styles.list_item}>
+                  <div className={styles.leading}>
+
+                    <input type="checkbox" name="chk" className={styles.checkbox} />
+                  </div>
+                  <div className={styles.support_text}>
+
+                    <span className={styles.list_item_text}>Fazer um bolo</span>
+                  </div>
+                  <div className={styles.trailing_icon}>
+
+                    <Image src={"/trash.svg"} alt="trash" width={34} height={34} />
+                  </div>
+                </li>
+                <li className={styles.list_item}>
+                  <div className={styles.leading}>
+
+                    <input type="checkbox" name="chk" className={styles.checkbox} />
+                  </div>
+                  <div className={styles.support_text}>
+
+                    <span className={styles.list_item_text}>Lavar a louça</span>
+                  </div>
+                  <div className={styles.trailing_icon}>
+
+                    <Image src={"/trash.svg"} alt="trash" width={34} height={34} />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div className={styles.list_title}><span>Tarefas finalizadas</span></div>
+          <div className={styles.list}>
+            <div className={styles.list_items}>
+              <ul>
+                <li className={styles.list_item}>
+                  <div className={styles.leading}>
+
+                    <input type="checkbox" name="chk" className={styles.checkbox_checked} checked />
+                  </div>
+                  <div className={styles.support_text}>
+                    <span className={styles.list_item_text_done}>Fazer um bolo</span>
+                  </div>
+                  <div className={styles.trailing_icon}>
+                    <Image src={"/trash.svg"} alt="trash" width={34} height={34} />
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
       </main>
-      <footer>
+      <footer className={styles.footer}>
         <button>adicionar</button>
       </footer>
     </div>

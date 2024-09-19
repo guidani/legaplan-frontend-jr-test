@@ -1,6 +1,20 @@
 $layout-breakpoint-large: 1024px;
+$color_gray: #0000008a;
+$color_gray_secondary: #b0bbd1;
+$color_dark_blue: #0796d3;
+$color_light_blue: #53c0f0;
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 .page {
+  width: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
   align-items: center;
@@ -12,6 +26,7 @@ $layout-breakpoint-large: 1024px;
 }
 
 .header {
+  width: 100%;
   display: grid;
   gap: 1rem;
   border-bottom: 1px solid #d7dde9;
@@ -36,14 +51,78 @@ $layout-breakpoint-large: 1024px;
   }
   .date {
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.54);
+    color: $color_gray;
   }
 }
 
 .main {
-  h1 {
-    color: rebeccapurple;
+  width: 100%;
+  .lists {
+    display: grid;
+    border: 1px solid #eaecf0;
+    border-radius: 1rem;
+    padding: 0.5rem 2rem 2rem 2rem;
+    .list_title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem 0rem;
+      span {
+        font-weight: 400;
+        color: $color_gray;
+      }
+    }
+    .list {
+      .list_items {
+        ul {
+          display: grid;
+          align-items: center;
+          gap: 0.5rem;
+          .list_item {
+            padding: 1rem 0.5rem;
+            border: 1px dashed #d7dde9;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .checkbox {
+              width: 1.5rem;
+              height: 1.5rem;
+              border-radius: 1rem;
+            }
+            .support_text {
+              padding-left: 1rem;
+              flex: 1;
+            }
+            .checkbox_checked {
+              width: 1.5rem;
+              height: 1.5rem;
+              color: $color_dark_blue;
+              border: 1px solid $color_dark_blue;
+              border-radius: 0.5rem;
+              background-color: $color_light_blue;
+            }
+            .list_item_text {
+              flex: 1;
+              align-self: flex-start;
+            }
+            .list_item_text_done {
+              flex: 1;
+              text-decoration: line-through;
+              color: $color_gray;
+            }
+            .trailing_icon {
+              color: $color_gray_secondary;
+            }
+          }
+        }
+      }
+    }
   }
+}
+
+.footer {
+  width: 100%;
 }
 
 @media (min-width: $layout-breakpoint-large) {
@@ -61,6 +140,16 @@ $layout-breakpoint-large: 1024px;
     }
     .date {
       text-align: right;
+    }
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .lists {
+      grid-column-start: 2;
+      width: 100%;
+      max-width: 28.125rem;
     }
   }
 }
