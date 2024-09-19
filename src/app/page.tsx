@@ -101,7 +101,10 @@ export default function Home() {
         </div>
       </main>
       <footer className={styles.footer}>
+        <div className={styles.add_btn}>
+
         <Button text="Adicionar nova tarefa" buttonStyle={ButtonStyle.primary} handler={toggleModal} />
+        </div>
       </footer>
       <Modal show={isModalOpen} handleClose={toggleModal} />
     </div>
