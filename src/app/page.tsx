@@ -1,7 +1,15 @@
+"use client"
 import Image from "next/image";
+import { useState } from "react";
+import Modal from "./components/modal/Modal";
 import styles from "./page.module.scss";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -92,8 +100,9 @@ export default function Home() {
         </div>
       </main>
       <footer className={styles.footer}>
-        <button className={styles.btn_primary}>Adicionar nova tarefa</button>
+        <button className={styles.btn_primary} onClick={toggleModal}>Adicionar nova tarefa</button>
       </footer>
+      <Modal show={isModalOpen} handleClose={toggleModal} />
     </div>
   );
 }
