@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </main>
       <footer className={styles.footer}>
-        <button>adicionar</button>
+        <button className={styles.btn_primary}>Adicionar nova tarefa</button>
       </footer>
     </div>
   );

@@ -3,6 +3,8 @@ $color_gray: #0000008a;
 $color_gray_secondary: #b0bbd1;
 $color_dark_blue: #0796d3;
 $color_light_blue: #53c0f0;
+$color_dark_red: #d30707;
+$color_light_red: #f05353;
 
 @mixin button-reset {
   padding: 0;
@@ -125,6 +127,34 @@ $color_light_blue: #53c0f0;
   width: 100%;
 }
 
+.btn_primary {
+  @include button-reset;
+  background: linear-gradient(to right, $color_dark_blue, $color_light_blue);
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+.btn_danger {
+  @include button-reset;
+  background: linear-gradient(to right, $color_dark_red, $color_light_red);
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+.btn_neutral {
+  @include button-reset;
+  background: #e7eefb;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+  color: #000;
+  font-weight: 500;
+}
+
 @media (min-width: $layout-breakpoint-large) {
   .header {
     display: grid;
@@ -148,8 +178,11 @@ $color_light_blue: #53c0f0;
     grid-template-columns: repeat(3, 1fr);
     .lists {
       grid-column-start: 2;
-      width: 100%;
-      max-width: 28.125rem;
+      width: 28.125rem;
     }
+  }
+
+  .footer {
+    width: 28.125rem;
   }
 }
