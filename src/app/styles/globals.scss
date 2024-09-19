@@ -29,3 +29,39 @@ a {
 ul {
   list-style-type: none;
 }
+
+/* Escondendo o checkbox padrão */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.125rem solid lightgray; /* Borda azul escura */
+  background-color: #ffffff; /* Fundo branco quando desmarcado */
+  border-radius: 4px; /* Bordas levemente arredondadas */
+  cursor: pointer;
+  position: relative;
+  // transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilo quando o checkbox está marcado */
+input[type="checkbox"]:checked {
+  border: 0.125rem solid #0796d3; /* Borda azul escura */
+  background-color: #53c0f0; /* Fundo azul claro */
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✔";
+  color: #0796d3; /* Cor do ícone azul escura */
+  font-size: 16px;
+  position: absolute;
+  top: -2px;
+  left: 3px;
+}
+
+/* Alterar cor ao focar */
+// input[type="checkbox"]:focus {
+//   outline: none;
+//   border-color: #002244;
+// }

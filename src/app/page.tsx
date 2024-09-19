@@ -76,7 +76,7 @@ export default function Home() {
                 <li className={styles.list_item}>
                   <div className={styles.leading}>
 
-                    <input type="checkbox" name="chk" className={styles.checkbox_checked} checked />
+                    <input type="checkbox" name="chk" className={styles.checkbox_checked} defaultChecked />
                   </div>
                   <div className={styles.support_text}>
                     <span className={styles.list_item_text_done}>Fazer um bolo</span>
