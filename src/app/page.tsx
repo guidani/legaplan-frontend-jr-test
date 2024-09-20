@@ -13,6 +13,7 @@ interface Todo {
 }
 
 export default function Home() {
+  const [allTodos, setAllTodos] = useState<Todo[]>([])
   const [incomplete, setIncomplete] = useState<Todo[]>([]);
   const [complete, setComplete] = useState<Todo[]>([]);
 
@@ -23,12 +24,15 @@ export default function Home() {
       }
     });
     const todos = await data.json();
+    setAllTodos(allTodos);
     const incompleteTodos = todos.filter((todo: Todo) => !todo.done);
     setIncomplete(incompleteTodos);
 
     const completeTodos = todos.filter((todo: Todo) => todo.done);
     setComplete(completeTodos);
   }
+
+
 
   useEffect(() => {
     getTodos();
