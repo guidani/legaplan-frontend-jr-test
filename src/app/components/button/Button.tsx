@@ -11,9 +11,10 @@ type Props = {
   text: string
   className?: string
   buttonStyle: ButtonStyle
+  type: "button" | "reset" | "submit" | undefined
 }
 
-export default function Button({ handler, text, buttonStyle }: Props) {
+export default function Button({ handler, text, buttonStyle, type }: Props) {
   const getButtonClass = () => {
     switch (buttonStyle) {
       case ButtonStyle.primary:
@@ -30,6 +31,6 @@ export default function Button({ handler, text, buttonStyle }: Props) {
   return <button
     className={`${getButtonClass()}`}
     onClick={handler}
-    type="submit"
+    type={type}
   >{text}</button>
 }

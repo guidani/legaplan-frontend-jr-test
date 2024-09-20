@@ -18,7 +18,7 @@ export default function Footer() {
   };
   return (<footer className={styles.footer}>
     <div className={styles.add_btn}>
-      <Button text="Adicionar nova tarefa" buttonStyle={ButtonStyle.primary} handler={toggleModal} />
+      <Button text="Adicionar nova tarefa" buttonStyle={ButtonStyle.primary} handler={toggleModal} type="submit" />
     </div>
     <Modal show={isModalOpen} handleClose={toggleModal}>
       <FormAddTodo />

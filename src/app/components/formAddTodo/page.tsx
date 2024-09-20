@@ -3,7 +3,7 @@ import Button, { ButtonStyle } from "../button/Button";
 import styles from './formAddTodo.module.scss';
 
 export default function FormAddTodo() {
-  return <form action={createTodo}>
+  return <form action={createTodo} method="POST">
     <label className={styles.input_label} htmlFor="title">Título</label>
     <input
       type="text"
@@ -13,8 +13,8 @@ export default function FormAddTodo() {
       id="title"
     />
     <div className={styles.form_buttons}>
-      <Button text="Adicionar" buttonStyle={ButtonStyle.primary} />
-      <Button text="Cancelar" buttonStyle={ButtonStyle.neutral} />
+      <Button text="Adicionar" buttonStyle={ButtonStyle.primary} type="submit" />
+      <Button text="Cancelar" buttonStyle={ButtonStyle.neutral} type="button" />
     </div>
   </form>
 }

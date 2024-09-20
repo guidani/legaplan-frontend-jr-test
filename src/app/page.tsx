@@ -1,3 +1,4 @@
+
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import ListItem from "./components/list_item/ListItem";
@@ -10,7 +11,11 @@ interface Todo {
 }
 
 export default async function Home() {
-  const data = await fetch("http://localhost:4000/todos");
+  const data = await fetch("http://localhost:4000/todos", {
+    next: {
+      tags: ['get-todos']
+    }
+  });
   const todos = await data.json();
 
   const incompleteTodos = todos.filter((todo: Todo) => !todo.done);
