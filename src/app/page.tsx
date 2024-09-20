@@ -5,15 +5,7 @@ import ListItem from "./components/list_item/ListItem";
 import styles from "./page.module.scss";
 
 export default function Home() {
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [isModalDelOpen, setIsModalDelOpen] = useState(false);
-
-  // const toggleModal = () => {
-  //   setIsModalOpen(!isModalOpen);
-  // };
-  // const toggleModalDeletarTarefa = () => {
-  //   setIsModalDelOpen(!isModalDelOpen);
-  // };
+  
   return (
     <div className={styles.page}>
       <Header />

@@ -1,4 +1,3 @@
-// Modal.js
 import Button, { ButtonStyle } from "../button/Button";
 import styles from "./modal.module.scss";
 
