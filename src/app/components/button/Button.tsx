@@ -11,7 +11,7 @@ type Props = {
   text: string
   className?: string
   buttonStyle: ButtonStyle
-  type: "button" | "reset" | "submit" | undefined
+  type?: "button" | "reset" | "submit" | undefined
 }
 
 export default function Button({ handler, text, buttonStyle, type }: Props) {

@@ -1,4 +1,6 @@
+"use client"
 
+import { useEffect, useState } from "react";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import ListItem from "./components/list_item/ListItem";
@@ -10,16 +12,28 @@ interface Todo {
   done: boolean;
 }
 
-export default async function Home() {
-  const data = await fetch("http://localhost:4000/todos", {
-    next: {
-      tags: ['get-todos']
-    }
-  });
-  const todos = await data.json();
+export default function Home() {
+  const [incomplete, setIncomplete] = useState<Todo[]>([]);
+  const [complete, setComplete] = useState<Todo[]>([]);
 
-  const incompleteTodos = todos.filter((todo: Todo) => !todo.done);
-  const completeTodos = todos.filter((todo: Todo) => todo.done);
+  async function getTodos() {
+    const data = await fetch("http://localhost:4000/todos", {
+      next: {
+        tags: ['get-todos']
+      }
+    });
+    const todos = await data.json();
+    const incompleteTodos = todos.filter((todo: Todo) => !todo.done);
+    setIncomplete(incompleteTodos);
+
+    const completeTodos = todos.filter((todo: Todo) => todo.done);
+    setComplete(completeTodos);
+  }
+
+  useEffect(() => {
+    getTodos();
+    return () => { }
+  }, [incomplete, complete])
 
   return (
     <div className={styles.page}>
@@ -34,8 +48,8 @@ export default async function Home() {
           <div className={styles.list}>
             <div className={styles.list_items}>
               <ul>
-                {incompleteTodos.map((todo: Todo) =>
-                  <ListItem text={`${todo.title}`} key={todo.id} done={todo.done} />
+                {incomplete.map((todo: Todo) =>
+                  <ListItem text={`${todo.title}`} key={todo.id} done={todo.done} id={todo.id} />
                 )}
               </ul>
             </div>
@@ -45,8 +59,8 @@ export default async function Home() {
           <div className={styles.list}>
             <div className={styles.list_items}>
               <ul>
-                {completeTodos.map((todo: Todo) =>
-                  <ListItem text={`${todo.title}`} key={todo.id} done={todo.done} />
+                {complete.map((todo: Todo) =>
+                  <ListItem text={`${todo.title}`} key={todo.id} done={todo.done} id={todo.id} />
                 )}
               </ul>
             </div>
