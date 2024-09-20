@@ -11,3 +11,20 @@ Sobre o resultado: Você será avisado caso seu perfil e teste nos agrade!
 Em caso de dúvidas, entre em contato pelo LinkedIn.
 
 Boa sorte!
+
+# Dependências
+
+- json-server
+
+Para instalar o json-server execute o comando: `npm install json-server`
+
+# Como executar
+
+Execute os comandos:
+
+`npm run server`: para executar o servidor de dados na porta 4000.
+
+`npm run dev`: para executar a aplicação na porta 3000.
+
+acesse: `http://localhost:3000` para ver a aplicação funcionado.
+
