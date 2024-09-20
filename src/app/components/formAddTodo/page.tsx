@@ -38,7 +38,7 @@ export default function FormAddTodo() {
     />
     <div className={styles.form_buttons}>
       <Button text="Adicionar" buttonStyle={ButtonStyle.primary} type="button" handler={createTodo} />
-      <Button text="Cancelar" buttonStyle={ButtonStyle.neutral} type="button" />
+      {/* <Button text="Cancelar" buttonStyle={ButtonStyle.neutral} type="button" /> */}
     </div>
   </>
 }

@@ -27,16 +27,14 @@ export default function ListItem({ id, text, done, changeHandler }: Props) {
           </form>
         </div>
         <div className={styles.support_text}>
-          <span className={styles.list_item_text}>{id}-{text}</span>
+          <span className={styles.list_item_text}>{text}</span>
         </div>
         <div className={styles.trailing_icon}>
 
           <input type="text" name="id" id="id" hidden value={id} />
           <button className={styles.btn} type="submit" onClick={toggleModalDeletarTarefa}>
             <Image src={"/trash.svg"} alt="trash" width={34} height={34} />
-
           </button>
-
         </div>
       </li>
       <ModalDeletarTarefa show={isModalDelOpen} handleClose={toggleModalDeletarTarefa} id={id} />

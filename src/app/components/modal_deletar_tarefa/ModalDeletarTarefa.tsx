@@ -20,7 +20,7 @@ const ModalDeletarTarefa = ({ show, handleClose, id }: Props) => {
     <div className={styles.modal_overlay} onClick={handleClose}>
       <div className={styles.modal_window} onClick={(e) => e.stopPropagation()}>
         <h2 className={styles.modal_title}>Deletar tarefa</h2>
-        <label className={styles.input_label}>Tem certeza que deseja deletar essa tarefa? {id}</label>
+        <label className={styles.input_label}>Tem certeza que deseja deletar essa tarefa?</label>
         <div className={styles.modal_buttons}>
           <Button text="Deletar" buttonStyle={ButtonStyle.danger} handler={deleteTodo} />
           <Button text="Cancelar" buttonStyle={ButtonStyle.neutral} handler={handleClose} />

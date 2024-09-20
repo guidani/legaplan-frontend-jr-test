@@ -1,3 +1,4 @@
+import Button, { ButtonStyle } from "../button/Button";
 import styles from "./modal.module.scss";
 
 type Props = {
@@ -16,6 +17,9 @@ const Modal = ({ show, handleClose, children }: Props) => {
       <div className={styles.modal_window} onClick={(e) => e.stopPropagation()}>
         <h2 className={styles.modal_title}>Nova tarefa</h2>
         {children}
+        <div className={styles.btn}>
+          <Button text="Cancelar" buttonStyle={ButtonStyle.neutral} type="button" handler={handleClose} />
+        </div>
       </div>
     </div>
   );
