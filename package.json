@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "json-server db.json -p 4000"
+    "server": "json-server db.json -p 4000 --watch"
   },
   "dependencies": {
     "next": "14.2.12",

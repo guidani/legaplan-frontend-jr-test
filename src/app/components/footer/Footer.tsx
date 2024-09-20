@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import Button, { ButtonStyle } from "../button/Button";
+import FormAddTodo from "../formAddTodo/page";
 import Modal from "../modal/Modal";
 import ModalDeletarTarefa from "../modal_deletar_tarefa/ModalDeletarTarefa";
 import styles from "./footer.module.scss";
@@ -19,7 +20,9 @@ export default function Footer() {
     <div className={styles.add_btn}>
       <Button text="Adicionar nova tarefa" buttonStyle={ButtonStyle.primary} handler={toggleModal} />
     </div>
-    <Modal show={isModalOpen} handleClose={toggleModal} />
+    <Modal show={isModalOpen} handleClose={toggleModal}>
+      <FormAddTodo />
+    </Modal>
     <ModalDeletarTarefa show={isModalDelOpen} handleClose={toggleModalDeletarTarefa} />
   </footer>)
 

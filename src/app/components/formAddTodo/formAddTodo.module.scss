@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.form_input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.input_label {
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.form_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+@media (min-width: $layout-breakpoint-large) {
+  .form_buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+}
