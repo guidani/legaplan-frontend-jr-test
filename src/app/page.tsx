@@ -1,35 +1,22 @@
 "use client"
 import Image from "next/image";
-import { useState } from "react";
-import Button, { ButtonStyle } from "./components/button/Button";
-import Modal from "./components/modal/Modal";
-import ModalDeletarTarefa from "./components/modal_deletar_tarefa/ModalDeletarTarefa";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
 import styles from "./page.module.scss";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalDelOpen, setIsModalDelOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalDelOpen, setIsModalDelOpen] = useState(false);
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  const toggleModalDeletarTarefa = () => {
-    setIsModalDelOpen(!isModalDelOpen);
-  };
+  // const toggleModal = () => {
+  //   setIsModalOpen(!isModalOpen);
+  // };
+  // const toggleModalDeletarTarefa = () => {
+  //   setIsModalDelOpen(!isModalDelOpen);
+  // };
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <Image src={"/logo.svg"} alt="logo" width={34} height={34} />
-          <span>FocalPoint</span>
-        </div>
-        <div className={styles.welcome}>
-          <span>Bem-vindo de volta, Marcus</span>
-        </div>
-        <div className={styles.date}>
-          <span>Segunda, 01 de dezembro de 2025</span>
-        </div>
-      </header>
+      <Header />
       <main className={styles.main}>
         <div className={styles.lists}>
           <div className={styles.list_title}>
@@ -48,34 +35,6 @@ export default function Home() {
                     <span className={styles.list_item_text}>Lavar as mãos</span>
                   </div>
                   <div className={styles.trailing_icon}>
-                    <Image src={"/trash.svg"} alt="trash" width={34} height={34} />
-                  </div>
-                </li>
-                <li className={styles.list_item}>
-                  <div className={styles.leading}>
-
-                    <input type="checkbox" name="chk" className={styles.checkbox} />
-                  </div>
-                  <div className={styles.support_text}>
-
-                    <span className={styles.list_item_text}>Fazer um bolo</span>
-                  </div>
-                  <div className={styles.trailing_icon}>
-
-                    <Image src={"/trash.svg"} alt="trash" width={34} height={34} />
-                  </div>
-                </li>
-                <li className={styles.list_item}>
-                  <div className={styles.leading}>
-
-                    <input type="checkbox" name="chk" className={styles.checkbox} />
-                  </div>
-                  <div className={styles.support_text}>
-
-                    <span className={styles.list_item_text}>Lavar a louça</span>
-                  </div>
-                  <div className={styles.trailing_icon}>
-
                     <Image src={"/trash.svg"} alt="trash" width={34} height={34} />
                   </div>
                 </li>
@@ -105,13 +64,14 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className={styles.footer}>
+      <Footer />
+      {/* <footer className={styles.footer}>
         <div className={styles.add_btn}>
           <Button text="Adicionar nova tarefa" buttonStyle={ButtonStyle.primary} handler={toggleModal} />
         </div>
       </footer>
       <Modal show={isModalOpen} handleClose={toggleModal} />
-      <ModalDeletarTarefa show={isModalDelOpen} handleClose={toggleModalDeletarTarefa} />
+      <ModalDeletarTarefa show={isModalDelOpen} handleClose={toggleModalDeletarTarefa} /> */}
     </div>
   );
 }

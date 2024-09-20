@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.footer {
+  width: 100%;
+}
+
+@media (min-width: $layout-breakpoint-large) {
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .add_btn {
+      grid-column-start: 2;
+      width: 28.125rem;
+    }
+  }
+}
