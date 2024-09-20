@@ -14,21 +14,27 @@ Boa sorte!
 
 # Dependências
 
-- json-server
+- NodeJS versão 18+
+
+O projeto depende do json-server para ser executado
 
 Para instalar o json-server execute o comando: `npm install -g json-server`
 
-Na pasta do projeto execute o seguinte comando para instalar as demais dependências:
-
-`npm install`
-
 # Como executar
 
-Execute os comandos:
+Efetue o clone do projeto
 
-`npm run server`: para executar o servidor de dados na porta 4000.
+`git clone https://github.com/guidani/legaplan-frontend-jr-test`
 
-`npm run dev`: para executar a aplicação na porta 3000.
+Descompact o arquivo
+
+Dentro da pasta execute os comandos:
+
+1 - instalar as demais dependências: `npm install`
+
+2 - para executar o servidor de dados na porta 4000: `npm run server`: 
+
+3 - para executar a aplicação na porta 3000: `npm run dev`: 
 
 acesse: `http://localhost:3000` para ver a aplicação funcionado.
 
