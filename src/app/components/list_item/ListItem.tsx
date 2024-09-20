@@ -5,12 +5,13 @@ type Props = {
   done: boolean;
   text: string;
   id?: string;
+  changeHandler?: () => void
 }
 
-export default function ListItem({ text, done }: Props) {
+export default function ListItem({ text, done, changeHandler }: Props) {
   return <li className={styles.list_item}>
     <div className={styles.leading}>
-      <input type="checkbox" name="chk" className={`${done ? styles.checkbox_checked : styles.checkbox}`} />
+      <input type="checkbox" name="chk" className={`${done ? styles.checkbox_checked : styles.checkbox}`} onChange={changeHandler} />
     </div>
     <div className={styles.support_text}>
       <span className={styles.list_item_text}>{text}</span>

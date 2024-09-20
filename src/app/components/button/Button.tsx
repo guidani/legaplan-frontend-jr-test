@@ -30,5 +30,6 @@ export default function Button({ handler, text, buttonStyle }: Props) {
   return <button
     className={`${getButtonClass()}`}
     onClick={handler}
+    type="submit"
   >{text}</button>
 }
