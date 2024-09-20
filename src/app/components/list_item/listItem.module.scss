@@ -1,0 +1,38 @@
+@import "../../styles/variables.scss";
+
+.list_item {
+  padding: 1rem 0.5rem;
+  border: 1px dashed #d7dde9;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .support_text {
+    padding-left: 1rem;
+    flex: 1;
+  }
+
+  .list_item_text {
+    flex: 1;
+    align-self: flex-start;
+  }
+  .list_item_text_done {
+    flex: 1;
+    text-decoration: line-through;
+    color: $color_gray;
+  }
+  .trailing_icon {
+    color: $color_gray_secondary;
+  }
+}
+
+@media (min-width: $layout-breakpoint-large) {
+  .list_item {
+    padding: 1rem 1rem;
+    &:hover {
+      border: 1px solid #f7f9fd;
+      background-color: #f7f9fd;
+    }
+  }
+}
