@@ -16,7 +16,7 @@ Boa sorte!
 
 - json-server
 
-Para instalar o json-server execute o comando: `npm install json-server`
+Para instalar o json-server execute o comando: `npm install -g json-server`
 
 Na pasta do projeto execute o seguinte comando para instalar as demais dependências:
 
