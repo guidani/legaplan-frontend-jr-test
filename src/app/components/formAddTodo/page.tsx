@@ -24,6 +24,8 @@ export default function FormAddTodo() {
       }),
     });
 
+    setText("");
+
   }
 
   return <>
@@ -34,6 +36,7 @@ export default function FormAddTodo() {
       className={styles.form_input}
       name="title"
       id="title"
+      value={text}
       onChange={(e) => handleText(e)}
     />
     <div className={styles.form_buttons}>
